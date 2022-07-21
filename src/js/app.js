@@ -1,5 +1,3 @@
-import { Character } from "./character"
-
 class Team {
   constructor() {
     this.members = new Set();
@@ -12,19 +10,21 @@ class Team {
       this.members.add(member);
     }
   }
+
   addAll(...newMembers) {
-    newMembers.map((member) => {
+    newMembers.forEach((member) => {
       this.members.add(member);
     });
   }
+
   toArray() {
     return [...this.members];
   }
 }
+// eslint-disable-next-line import/prefer-default-export
+export { Team };
 
-export {Team}
-
-/// Spacify
+// / Spacify
 // let spacify = new Team();
 // spacify.addAll(den, tim);
 // console.log(spacify.members); // 2 members: Den, Tim
