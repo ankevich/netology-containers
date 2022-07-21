@@ -22,4 +22,17 @@ test("функция добавляет персонажа в команду", (
   expect(expected).toEqual(spacify.members);
 });
 
+test('функция добавляет всех персонажей', () => {
+    const expected = new Set ([annie, den, tim])
+    let spacify = new Team()
+    spacify.addAll(annie, den, tim)
+    expect(expected).toEqual(spacify.members)
+})
 
+test('функция превращает персонажей в массив', () => {
+    const expected = [annie, den, tim]
+    let spacify = new Team()
+    spacify.addAll(annie, den, tim)
+    const array = spacify.toArray()
+    expect(expected).toEqual(array)
+})
